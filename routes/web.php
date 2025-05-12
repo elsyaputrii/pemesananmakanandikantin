@@ -9,6 +9,7 @@ use App\Http\Controllers\ListBarang1Controller;
 use App\Http\Controllers\ViewImageController;
 use App\Http\Controllers\ProductController;
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -43,6 +44,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/listbarang/{id}/{nama}', function($id, $nama){
     return view('list_barang', compact('id', 'nama'));
+});
+
+Route::get('/pages/home', function () {
+    return view('pages.home');
 });
 
 Route::get('/login', [LoginController::class, 'index']);
