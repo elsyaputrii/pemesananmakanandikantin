@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ListItemController;
+use App\Http\Controllers\ListBarang1Controller;
+use App\Http\Controllers\ViewImageController;
+use App\Http\Controllers\ProductController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -35,6 +38,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/users', function () {
         return 'Admin Users';
     });
+   
 });
 
 Route::get('/listbarang/{id}/{nama}', function($id, $nama){
@@ -44,3 +48,6 @@ Route::get('/listbarang/{id}/{nama}', function($id, $nama){
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/list_item', [ListItemController::class, 'index']);
+Route::get('/list_barang1', [ListBarang1Controller::class, 'tampilkan']);
+Route::get('/view_image', [ViewImageController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index']);
